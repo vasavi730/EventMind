@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Login</title>
+	<link href="D:/boot/bootstrap-4.5.3-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style type="text/css">
+
+.login-key {
+    height: 100px;
+    font-size: 80px;
+    line-height: 100px;
+    background: -webkit-linear-gradient(#e2959d,#e7717d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.container{
+  background-color: rgb(216, 216, 216);
+  height: 400px;
+  width: 600px;
+  border-radius: 20px;
+}
+
+  </style>
+</head>
+<body>
+<div class="alert alert-info">
+            Restricted to admins only.. 
+        </div>
+        <center>
+         <div class="login-key">
+                    <i class="fa fa-key" aria-hidden="true" style="size: 40px"></i>
+                </div>
+<div class="container">
+                  <br>
+          <h1 style="font-weight: bold;color: black;">ADMIN PANEL</h1>
+<br><br>
+
+<form action="/admin_login/" method="POST">
+Enter username: <input type="text" name="u"><br><br>
+Enter password: <input type="password" name="p"><br><br>
+<button type="submit">LOGIN</button>
+</form>
+</div>
+</center>
+</body>
+</html>

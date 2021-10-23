@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        {% csrf_token %}
+        <div class="jumbotron">
+            <h1>Thanks for your order</h1>
+            <p>Your order has been recieved. If you have any queries mail us at <a href="mailto:eventmind2k21@gmail.com">eventmind2k21@gmail.com</a></p>
+        </div>
+
+        <div class="jumbotron">
+            <div class="col-lg-6">
+                <h1>Summary</h1>
+                <p>
+                    Order id: {{id1}}<br>
+                    
+                    Event type: {{event}}<br>
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <h1>Address</h1>
+                <p>
+                    Address: {{ address }}
+                </p>
+            </div>
+        </div>
+    </body>
+</html>

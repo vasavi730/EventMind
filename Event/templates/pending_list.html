@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pending..</title>
+</head>
+<body>
+{% csrf_token %}
+
+{% for w in lst %}
+{{w.client_name}}<br>
+{{w.client_email}}<br>
+{{w.client_mobile}}<br>
+{{w.client_address}}<br>
+{{w.client_event}}<br>
+{{w.client_status}}<br>
+<a href="{% url 'accept' id1=w.client_id %}"><button class="btn btn-primary">Approve</button></a>
+<br>
+<a href="{% url 'decline' id1=w.client_id %}"><button class="btn btn-primary">Disapprove</button></a>
+<br>
+{% endfor %}
+
+</body>
+</html>

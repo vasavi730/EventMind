@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Booking</title>
+	<style>
+		.container{
+  background-color: rgb(216, 216, 216);
+  height: 400px;
+  width: 600px;
+  border-radius: 20px;
+  align-items: center;
+  margin-left: 450px;
+}
+.jumbotron
+{
+	background-color: rgb(216, 216, 216) ;
+	height: 300px;
+	width: 600px;
+}
+input[type=text]{
+
+}
+	</style>
+</head>
+<body>
+<center><h1>Booking</h1></center>
+<div class="container">
+	
+<form action="/update/" method="POST" style="align-content: center;">
+<br><br><br>
+	<center>Enter your name: <input type="text" name="name"><br><br></center>
+	&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Enter your email id: <input type="email" name="email"><br><br>
+	&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Enter address: <input type="address" name="add"><br><br>
+	&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Enter mobile number:<input type="number" name="mob"><br><br>
+	&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Choose an Event:
+    <select name="events" id="events">
+  	<option value="wedding">Wedding</option>
+  	<option value="birthday">Birthday</option>
+  	<option value="surprise">Surprise</option>
+  	<option value="product">Product</option>
+  	<option value="theme">Theme</option>
+  	<option value="retirements">Retirements</option>
+  	<option value="annual">Annual</option>
+    </select><br><br>
+
+    <center><button type="submit">SUBMIT</button></center>
+</form>
+
+</div>
+</body>
+</html>

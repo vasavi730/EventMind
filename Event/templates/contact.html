@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+	<title>Contact</title>
+	<style type="text/css">
+		body{
+			background-color: #EAEAEA;
+		}
+		#main{
+			height: 500px;
+			width: 1000px;
+			background-color: white;
+			border-color: 1px #707070;
+			border-style: groove;
+
+		}
+		.navbar-inverse{
+			background-color: #FF0000;
+		}
+		ul{
+			list-style-type: none;
+		}
+		.container{
+  background-color: rgb(216, 216, 216);
+  height: 400px;
+  width: 600px;
+  border-radius: 20px;
+}
+	</style>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/index/" style="color: white">EventMind</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/about/" style="color: white">About us</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" style="color: white">Services <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+         
+      				
+      					<li><a href="/wedding/" >Wedding</a></li>
+      					<li><a href="/birthday/" >Birthday</a></li>
+      					<li><a href="/surprise/" >Suprise Events</a></li>
+      					<li><a href="/product/" >Product launches</a></li>
+      				
+      					<li><a href="/theme/" >Theme Events</a></li>
+      					<li><a href="/retirement/" >Retirements</a></li>
+      					<li><a href="/annual/" >Annual Days</a></li>
+      				</ul>
+      			
+      		
+       
+      </li>
+      <li><a href="/gallery/" style="color: white">Gallery</a></li>
+      <li><a href="/contact/" style="color: white">Contact us</a></li></ul>
+   <ul class="nav navbar-nav navbar-right">
+      <li><a href="/login/"><span class="glyphicon glyphicon-log-in"></span>Admin Log in</a></li>
+    </ul>
+  </div>
+
+</nav>
+<center>
+	<div class="container">
+		<br>
+<h1 style="font-weight: bold;color: black;">Contact us</h1>
+<br><br>
+{% csrf_token %}
+<form action="/query/" method="POST">
+
+Full name: <input type="text" name="n"><br><br>
+Email: <input type="email" name="e"><br><br>
+Message: <input type="text" name="q" size="100" style="width: 200px;"><br><br>
+<button type="submit">SUBMIT</button>
+</form>
+</div></center>
+</body>
+</html>

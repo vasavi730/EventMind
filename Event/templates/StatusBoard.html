@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<title>Status</title>
+
+	<style>
+		.jumbotron{
+			background-image: linear-gradient(to right, #28283db0 , rgb(73, 75, 83));
+		}
+		p{
+			color: #aaccff;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h3>Tabs</h3>
+		<ul class="nav nav-tabs">
+		  <li class="active"><a href="/pending/">Events</a></li>
+		  <li><a href="/accepted/">Accepted</a></li>
+		  <li><a href="/rejected">Rejected</a></li>
+		  <li><a href="/query_list/">Queries</a></li>
+		</ul>
+
+		<br><br>
+		{% csrf_token %}
+
+{% for w in lst %}
+<div class="jumbotron">
+	<p>
+Client Name: {{w.client_name}}<br>
+Email: {{w.client_email}}<br>
+Mobile number: {{w.client_mobile}}<br>
+Address: {{w.client_address}}<br>
+Type of the Event: {{w.client_event}}<br>
+</p>
+<a href="{% url 'accept' id1=w.client_id %}"><button class="btn btn-primary">Approve</button></a>
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;
+<a href="{% url 'decline' id1=w.client_id %}"><button class="btn btn-primary">Disapprove</button></a>
+<br>
+</div>
+{% endfor %}
+</body>
+</html>
