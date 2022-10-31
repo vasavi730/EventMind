@@ -15,8 +15,8 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
-from django.conf.urls import include, url
-from django.urls import path
+from django.conf.urls import include
+from django.urls import path, re_path
 from Event.views import *
 from rest_framework import routers
 router = routers.DefaultRouter()
@@ -25,8 +25,8 @@ router.register(r'DashBoards',DashViewSet)
 
 urlpatterns = [
 
-    url(r'decline/(?P<id1>[0-9A-Fa-f-]+)$',decline, name='decline'),
-    url(r'accept/(?P<id1>[0-9A-Fa-f-]+)/$',accept,name='accept'),
+    re_path(r'decline/(?P<id1>[0-9A-Fa-f-]+)$',decline, name='decline'),
+    re_path(r'accept/(?P<id1>[0-9A-Fa-f-]+)/$',accept,name='accept'),
     path('admin/', admin.site.urls),
     path('index/',index),
     path('gallery/',gallery),
