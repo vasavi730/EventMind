@@ -13,21 +13,15 @@ from django.template.loader import render_to_string, get_template
 from django.core.mail import EmailMessage
 import uuid
 import datetime
-
-
 class DashViewSet(viewsets.ModelViewSet):
 	queryset = DashBoard.objects.all()
 	serializer_class = RecordSerializer
-
 	def retrieve(self, request, *args, **kwargs):
 		params = kwargs
 		print(params['pk'])
 		names = DashBoard.objects.filter(client_id=params['pk'])
-
 		serializer = RecordSerializer(names,many=True)
-
 		return Response(serializer.data)
-
 @csrf_exempt
 def update(request):
 	name = request.POST.get("name")
@@ -74,10 +68,8 @@ def accepted(request):
 			'Status' : x.client_status,
 			'id' : x.client_id
 		}
-
 		lst.append(x)
 	return render(request,'accepted_list.html',{'lst':lst})
-
 @csrf_exempt
 def admin_login(request):
 	u = request.POST.get("u")
@@ -96,13 +88,10 @@ def admin_login(request):
 				'Status' : x.client_status,
 				'id' : x.client_id
 			}
-
 		lst.append(x)
 		return render(request,'StatusBoard.html',{'lst':lst})
-
 	else:
 		return HttpResponse('Invalid username or password')
-
 def rejected(request):
 	obj = DashBoard.objects.filter(client_status='Declined')
 	msg=''
@@ -143,7 +132,6 @@ def pending(request):
 def accept(request, id1):
 	obj = DashBoard.objects.filter(client_id=id1).update(client_status='Accepted')
 	obj = DashBoard.objects.filter(client_id=id1)
-	
 	efrom = settings.EMAIL_HOST_USER
 	sub = 'Your request is accepted'
 	
