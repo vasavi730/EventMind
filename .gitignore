@@ -1,0 +1,6 @@
+.idea/
+.vscode/
+
+Event/__pycache__/
+EventMind/__pycache__/
+Event/migrations/__pycache__
