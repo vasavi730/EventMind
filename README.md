@@ -1,2 +1,2 @@
 
-Please read this readme!
+Please read this readme to know about the project!
